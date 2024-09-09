@@ -17,6 +17,7 @@
 		C9787E962C8F4AC8006B971C /* CountryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9787E952C8F4AC8006B971C /* CountryModel.swift */; };
 		C9787E992C8F50F3006B971C /* StateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9787E972C8F50F3006B971C /* StateCell.swift */; };
 		C9787E9A2C8F50F3006B971C /* StateCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9787E982C8F50F3006B971C /* StateCell.xib */; };
+		C9787E9C2C8F9645006B971C /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9787E9B2C8F9645006B971C /* ViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		C9787E952C8F4AC8006B971C /* CountryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryModel.swift; sourceTree = "<group>"; };
 		C9787E972C8F50F3006B971C /* StateCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateCell.swift; sourceTree = "<group>"; };
 		C9787E982C8F50F3006B971C /* StateCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StateCell.xib; sourceTree = "<group>"; };
+		C9787E9B2C8F9645006B971C /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +73,7 @@
 				C9787E812C8F49A9006B971C /* SceneDelegate.swift */,
 				C9787E832C8F49A9006B971C /* ViewController.swift */,
 				C9787E952C8F4AC8006B971C /* CountryModel.swift */,
+				C9787E9B2C8F9645006B971C /* ViewModel.swift */,
 				C9787E852C8F49A9006B971C /* Main.storyboard */,
 				C9787E882C8F49AB006B971C /* Assets.xcassets */,
 				C9787E8A2C8F49AB006B971C /* LaunchScreen.storyboard */,
@@ -156,6 +159,7 @@
 				C9787E842C8F49A9006B971C /* ViewController.swift in Sources */,
 				C9787E802C8F49A9006B971C /* AppDelegate.swift in Sources */,
 				C9787E962C8F4AC8006B971C /* CountryModel.swift in Sources */,
+				C9787E9C2C8F9645006B971C /* ViewModel.swift in Sources */,
 				C9787E822C8F49A9006B971C /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

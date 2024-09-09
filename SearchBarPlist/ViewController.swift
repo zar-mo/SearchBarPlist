@@ -8,11 +8,15 @@
 import UIKit
 
 class ViewController: UIViewController {
+ 
+    
     
     let nib = UINib(nibName: StateCell.identifier, bundle: nil)
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
-    var usa = CountryModel()
+    //var usa = CountryModel()
+    var viewModel = ViewModel()
+    var filtedData = [String]()
     
 
     override func viewDidLoad() {
@@ -26,11 +30,14 @@ class ViewController: UIViewController {
         tableView.dataSource = self
         searchBar.delegate = self
         tableView.register(nib, forCellReuseIdentifier: StateCell.identifier)
-        let path = Bundle.main.path(forResource: "StatePlist", ofType: "plist")
-        if let path = path{
-            let dict = NSDictionary(contentsOfFile: path)
-            usa.setStates(states: dict?.object(forKey: "States") as! [String])
-        }
+        
+        viewModel.delegate = self
+        
+//        let path = Bundle.main.path(forResource: "StatePlist", ofType: "plist")
+//        if let path = path{
+//            let dict = NSDictionary(contentsOfFile: path)
+//            usa.setStates(states: dict?.object(forKey: "States") as! [String])
+//        }
         
     }
 
@@ -41,7 +48,7 @@ extension ViewController: UITableViewDataSource   {
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return usa.filtered.count
+        return filtedData.count
     }
     
     
@@ -51,7 +58,7 @@ extension ViewController: UITableViewDataSource   {
         
         guard let cell = customCell else { return UITableViewCell()}
         
-        cell.nameLabel.text = usa.filtered[indexPath.row]
+        cell.nameLabel.text = filtedData[indexPath.row]
         
         return cell
     }
@@ -63,9 +70,24 @@ extension ViewController: UISearchBarDelegate{
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         
         print("searchbar: \(searchText)")
-        usa.search(searchText: searchText)
+        if !searchText.isEmpty{
+            
+            filtedData = filtedData.filter({$0.contains(searchText)})
+        }else{
+            filtedData = viewModel.country.states
+        }
         self.tableView.reloadData()
 
+    }
+}
+
+extension ViewController:  DataFromPlist {
+    
+    func getData(country: CountryModel) {
+        
+        filtedData = country.states
+        
+        print("inside viewcontoller")
     }
 }
 
